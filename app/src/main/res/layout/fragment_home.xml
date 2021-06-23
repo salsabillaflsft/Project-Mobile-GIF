@@ -39,7 +39,6 @@
 
             <EditText
                 android:id="@+id/am_et_search"
-                fontPath="fonts/Lato-Regular.ttf"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -52,8 +51,6 @@
             android:textColorHint="@color/black"
                 tools:ignore="MissingPrefix" />
 
-           /* android:hint="@string/tenor_sdk_search_hint"
-            android:textSize="@dimen/sbe_search_box_expanded_text_size"*/
 
         </LinearLayout>
 
