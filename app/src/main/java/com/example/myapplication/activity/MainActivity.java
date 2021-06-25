@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -14,45 +16,61 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
 
     private BottomNavigationView navbar;
+    private Fragment selectedFragment = new HomeFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SharedPreferences getPreferences = getSharedPreferences("SAVED_LOGIN", MODE_PRIVATE);
+        Boolean check = getPreferences.getBoolean("LOGGED", false);
+        String email = getPreferences.getString("EMAIL", "DEFAULT");
+        if (!check){
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            MainActivity.this.startActivity(intent);
+            finish();
+        }
         setContentView(R.layout.activity_main);
-
         navbar = findViewById(R.id.main_navbar);
         navbar.setOnNavigationItemSelectedListener(this);
-        loadFragment(new Fragment());
+
+        loadFragment(selectedFragment);
+        if (savedInstanceState == null){
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.main_frame, new HomeFragment())
+                    .commit();
+        }
     }
 
-    private boolean loadFragment(Fragment fragment) {
-        if(fragment != null){
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.main_frame, fragment)
+    private boolean loadFragment(Fragment selectedFragment){
+        if (selectedFragment !=null){
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.main_frame, selectedFragment)
                     .commit();
             return true;
         }
         return false;
     }
 
+
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        Fragment fragment = null;
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()){
+            case R.id.ic_home:
+                selectedFragment = new HomeFragment();
+                loadFragment(selectedFragment);
+                break;
 
-        switch(item.getItemId()){
-            case R.id.ic_home :
-                fragment = new HomeFragment();
+            case R.id.ic_tags:
+
+                break;
+
+            case R.id.ic_acc:
                 break;
 
 
-            case R.id.ic_tags :
-                fragment = new TagsFragment();
-                break;
-
-            case R.id.ic_acc :
-                fragment = new AccFragment();
-                break;
         }
-        return loadFragment(fragment);
+        return loadFragment(selectedFragment);
     }
 }
