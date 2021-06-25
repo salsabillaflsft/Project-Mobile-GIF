@@ -1,12 +1,22 @@
-package com.example.myapplication;
+package com.example.myapplication.fragment;
 
+import android.app.Activity;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.myapplication.R;
+import com.tenor.android.core.network.ApiClient;
+import com.tenor.android.core.response.WeakRefCallback;
+import com.tenor.android.core.response.impl.GifsResponse;
+
+import retrofit2.Call;
 
 /**
  * A simple {@link Fragment} subclass.

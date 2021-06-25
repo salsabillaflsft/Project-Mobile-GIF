@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:focusable="true"
-    android:focusableInTouchMode="true"
-    tools:context=".HomeFragment">
+    tools:context=".fragment.HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -49,7 +47,8 @@
             android:inputType="text"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
-                tools:ignore="MissingPrefix" />
+                tools:ignore="MissingPrefix"
+                android:hint="Search for GIFs"/>
 
 
         </LinearLayout>

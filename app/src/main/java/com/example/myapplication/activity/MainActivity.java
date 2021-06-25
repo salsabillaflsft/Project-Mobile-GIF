@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.myapplication.fragment.HomeFragment;
+import com.example.myapplication.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
@@ -40,6 +42,15 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         switch(item.getItemId()){
             case R.id.ic_home :
                 fragment = new HomeFragment();
+                break;
+
+
+            case R.id.ic_tags :
+                fragment = new TagsFragment();
+                break;
+
+            case R.id.ic_acc :
+                fragment = new AccFragment();
                 break;
         }
         return loadFragment(fragment);
