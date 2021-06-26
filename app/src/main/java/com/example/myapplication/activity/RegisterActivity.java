@@ -25,7 +25,7 @@ import java.util.Date;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private Button btnLogin, btnRegister;
+    private Button btnRegister;
     private EditText etName, etEmail, etPassword;
 
     @Override
@@ -79,7 +79,7 @@ public class RegisterActivity extends AppCompatActivity {
 
             DataUser validateEmail = dataUserDAO.checkUser(dataUser.getEmail());
             if (validateEmail !=null){
-                Toast.makeText(getApplicationContext(), "Email registered", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Email has been registered before", Toast.LENGTH_SHORT).show();
                 return false;
             }else{
                 return true;

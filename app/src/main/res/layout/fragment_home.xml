@@ -36,7 +36,7 @@
                 app:tint="@color/black" />
 
             <EditText
-                android:id="@+id/am_et_search"
+                android:id="@+id/et_search"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -62,7 +62,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/gif_base"/>
 
         </RelativeLayout>
 

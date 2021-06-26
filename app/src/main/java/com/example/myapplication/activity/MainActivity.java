@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.myapplication.fragment.AccFragment;
 import com.example.myapplication.fragment.HomeFragment;
 import com.example.myapplication.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -52,6 +53,14 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         }
         return false;
     }
+    public void reload(String reloadFragment){
+        if (reloadFragment.equals("tags")){
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.ic_acc, new AccFragment())
+                    .commit();
+        }
+    }
 
 
     @Override
@@ -62,14 +71,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 loadFragment(selectedFragment);
                 break;
 
-            case R.id.ic_tags:
-
-                break;
-
             case R.id.ic_acc:
+                selectedFragment = new AccFragment();
+                loadFragment(selectedFragment);
                 break;
-
-
         }
         return loadFragment(selectedFragment);
     }

@@ -19,11 +19,17 @@ public interface DataUserDAO {
     @Query("SELECT * FROM user_db WHERE email = :email")
     DataUser checkUser(String email);
 
+    @Query("SELECT * FROM user_db WHERE password = :password")
+    DataUser checkPass(String password);
+
     @Query("SELECT * FROM user_db WHERE email = :email AND password = :password")
     DataUser checkLogin(String email, String password);
 
     @Update
-    int updateDataUser(DataUser DataUser);
+    int updateDataUser(DataUser dataUser);
+    /*@Query("UPDATE user_db SET name,email,password" +
+            " WHERE password = :password")
+    DataUser updateDataUser(DataUser dataUser);*/
 
     @Query("DELETE FROM user_db WHERE email = :email")
     void deleteDataUser(String email);

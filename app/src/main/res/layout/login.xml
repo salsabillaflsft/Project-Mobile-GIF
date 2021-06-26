@@ -10,6 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
+        android:textStyle="bold"
         android:textSize="50sp"
         android:layout_marginStart="25dp"
         android:layout_marginBottom="10dp"
@@ -35,7 +36,6 @@
         android:padding="15dp"
         android:inputType="textEmailAddress"
         android:layout_above="@id/et_password"
-        android:background="@drawable/et_custom"
         android:textSize="15sp">
 
         </EditText>
@@ -51,7 +51,6 @@
         android:padding="15dp"
         android:inputType="textPassword"
         android:layout_centerInParent="true"
-        android:background="@drawable/et_custom"
         android:textSize="15sp">
     </EditText>
 
@@ -64,7 +63,8 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="15dp"
-        android:hint="Login" />
+        android:hint="Login"
+        android:textColorHint="@color/white"/>
 
     <Button
         android:id="@+id/btn_register"
@@ -74,6 +74,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="15dp"
-        android:hint="Haven't register yet? Register Here!" />
+        android:hint="Haven't register yet? Register Here!"
+        android:textColorHint="@color/white"/>
 
 </RelativeLayout>
