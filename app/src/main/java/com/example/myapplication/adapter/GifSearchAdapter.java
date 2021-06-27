@@ -44,7 +44,7 @@ public class GifSearchAdapter extends RecyclerView.Adapter<GifSearchAdapter.View
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Glide.with(context)
-                .load(gifSearchResultsItems.get(position).getMedia().get(0).getGif())
+                .load(gifSearchResultsItems.get(position).getMedia().get(0).getGif().getUrl())
                 .into(holder.ivThumbnail)
         ;
 

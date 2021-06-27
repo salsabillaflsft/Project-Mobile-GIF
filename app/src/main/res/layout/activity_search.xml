@@ -28,22 +28,10 @@
             android:minWidth="@dimen/expanded_search_bar_height"
             android:src="@drawable/ic_arrow_back"/>
 
-        <EditText
-            android:id="@+id/tv_search"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:hint="Search for GIFs"
-            android:maxLines="1"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            android:textCursorDrawable="@drawable/ic_tenor_cursor"
-            android:textSize="@dimen/sbe_search_box_expanded_text_size" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/as_rv_recyclerview"
+        android:id="@+id/rv_2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/ans_ll_search_box_expanded" />

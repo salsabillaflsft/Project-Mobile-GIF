@@ -79,7 +79,7 @@ public class HomeFragment extends Fragment {
                 if (actionId == EditorInfo.IME_ACTION_SEARCH) {
 //                    progressDialog.show();
                     Intent intent = new Intent(getContext(), SearchActivity.class);
-                    intent.putExtra("tag",gif);
+                    //intent.putExtra("tag",gif);
                     getContext().startActivity(intent);
                 }
             }
